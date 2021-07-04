@@ -20,7 +20,7 @@ Run tests: `npm test`
 
 In webpack dev file, in the plugins section of config, add this section:
 
-```json
+```
 new webpack.DefinePlugin({
   'process.env.API_URL': JSON.stringify('http://localhost:3001')
 })
@@ -29,7 +29,7 @@ Change the URL to where your API is hosted.
 
 In webpack prod file, the DefinePlugin is aleady included, so only add the line with process.env.API_URL:
 
-```json
+```
 new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('production'),
   'process.env.API_URL': JSON.stringify('http://localhost:3001')
