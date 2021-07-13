@@ -4,6 +4,7 @@ import { Configuration as WebpackDevServerConfiguraton } from 'webpack-dev-serve
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 interface Configuration extends webpack.Configuration {
   devServer?: WebpackDevServerConfiguraton
@@ -48,6 +49,7 @@ const config: Configuration = {
     extensions: ['.tsx','.ts', '.js']
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: 'public/index.html'
     }),
